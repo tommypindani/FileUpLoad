@@ -14,8 +14,7 @@ export class AppComponent implements OnInit {
   public address: string;
   public user: UserToCreate;
   public users: User[] = [];
-  public response: {dbPath: ''}
-
+  public response: {dbPath: ''};
 
   constructor(private http: HttpClient){}
 
@@ -41,7 +40,6 @@ export class AppComponent implements OnInit {
     this.http.get('https://localhost:5001/api/users')
     .subscribe(res => {
       this.users = res as User[];
-      this.users
     });
   }
 
@@ -49,10 +47,8 @@ export class AppComponent implements OnInit {
     this.isCreate = true;
     this.name = '';
     this.address = '';
-    
   }
 
-    
   public uploadFinished = (event) => {
     this.response = event;
   }

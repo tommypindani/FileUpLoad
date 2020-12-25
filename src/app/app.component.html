@@ -10,6 +10,7 @@
         <label for="address">Address</label>
         <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" [(ngModel)]="address">
       </div>
+      <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>
       <div class="row">
         <div class="offset-md-5 col-md-2">
           <button type="button" class="btn btn-primary" (click)="onCreate()">Create </button>
@@ -22,6 +23,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th scope="col">Image</th>
           <th scope="col">Name</th>
           <th scope="col">Address</th>
         </tr>
@@ -34,6 +36,14 @@
         </tr>
       </tbody>
     </table>
+
+    <app-upload></app-upload>
+<div class="row">
+  <div class="offset-md-5 col-md-2">
+    <button type="button" class="btn btn-primary" (click)="onCreate()">Create </button>
+  </div>
+</div>
+
     <div class="row">
       <div class="offset-md-10 col-md-2">
         <button type="button" class="btn btn-primary" (click)="returnToCreate()">New User</button>
